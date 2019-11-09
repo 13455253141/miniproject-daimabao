@@ -1,0 +1,18 @@
+<!--pages/test/test.wxml-->
+<view>
+  <button type="primary" bindtap="insert">添加项目</button>
+  <button type="primary" bindtap="select">项目列表</button>
+  <button type="primary" bindtap="upload">上传图片</button>
+  <button type="primary" bindtap="update">更新项目</button>
+   <button type="primary" bindtap="uploadImg">显示图片</button>
+   <button type="primary" bindtap="batchUploadImg">上传多张图片</button>
+   <button type="primary" bindtap="batchShowImg">显示多张图片</button>
+  <!-- <view wx:for="{{projectList}}" wx:key="{{index}}">
+    <image src="{{item.imageUrl}}"></image>
+    {{item.name}}  {{item.price}}
+  </view> -->
+  <block wx:for="{{images}}">
+    <image src="{{item}}"></image>
+  </block>
+</view>
+

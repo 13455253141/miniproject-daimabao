@@ -1,0 +1,39 @@
+<view class="main">
+    <view class="goods-box">
+       <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{project.imageurls}}" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="100%" bindtap='previewImg' data-url="{{item}}"/>
+            </swiper-item>
+        </block>
+    </swiper>
+        <!-- <image src="{{goods.image}}" class="goods-thumb"></image> -->
+        
+        <!-- <navigator open-type="switchTab" url="../cart/cart">
+            <view class="carts-icon {{scaleCart?'on':''}}">
+                <image src="/images/cart2.png"></image>
+                <text class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</text>
+            </view>
+        </navigator> -->
+        
+        <!-- <view class="goods-operation">
+            <text class="goods-operation-num">数量  {{num}}</text>
+            <text class="goods-operation-add" bindtap="addCount">+</text>
+            <text class="goods-to-cart" bindtap="addToCart">加入购物车</text>
+            <image src="/images/cart1.png"  class="goods-cart-img" bindtap="addToCart"></image>
+        </view> -->
+        <image wx:if="{{show}}" src="/images/cart1.png" class="to-carts-icon"></image>
+        <view class="goods-title">{{project.projectname}}</view>
+        <view class="goods-price">￥ {{project.price}}</view>
+    </view>
+    <view class="goods-tab-box">
+        <view class="goods-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">项目需求</view>
+        <view class="goods-tab-nav {{curIndex === 1 ?'on':''}}" bindtap="bindTap" data-index="1">开发环境</view>
+        <view class="goods-tab-nav {{curIndex === 2 ?'on':''}}" bindtap="bindTap" data-index="2">售后服务</view>
+        <view class="goods-content">
+            <view wx:if="{{curIndex === 0}}">{{project.projectrequirement}}</view>
+            <view wx:if="{{curIndex === 1}}">{{project.development}}</view>
+            <view wx:if="{{curIndex === 2}}">{{project.saleservice}}</view>
+        </view>
+    </view>
+</view>
