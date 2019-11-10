@@ -1,0 +1,4 @@
+<!--pages/kefu/kefu.wxml-->
+<text >点击下面微信号即可复制，然后去添加好友的地方粘贴即可</text>
+<button class='button' bindtap='contractCustomerservice'>客服微信:qq731628720</button>
+<button class='button' bindtap='makePhoneCall'>点击拨打客服电话</button>

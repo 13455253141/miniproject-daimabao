@@ -1,0 +1,8 @@
+<view>
+  <textarea class="areas" placeholder='意见反馈' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
+    <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+    <text class="hint">{{texts}}</text>
+  </textarea>
+  <view class="hr"></view>
+  <button type="primary" bindtap="primary"> 提交 </button>
+</view>

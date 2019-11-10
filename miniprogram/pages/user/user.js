@@ -1,6 +1,4 @@
 //index.js
-var wxParse = require('../../wxParse/wxParse')
-var WXRequest = require('../../utils/util').WXRequest
 const app = getApp()
 
 Page({
@@ -69,6 +67,23 @@ Page({
     })
   },
 
-  
+  //跳转到联系客服页
+  goToCustomerService() {
+    wx.navigateTo({
+      url: '../customerservice/customerservice',
+    })
+  },
+  //跳转到我的收藏页
+  goToFavorite() {
+    wx.navigateTo({
+      url: '../favorite/favorite',
+    })
+  },
+  //跳转到我的收藏页
+  goToAdvise() {
+    wx.navigateTo({
+      url: '../advise/advise',
+    })
+  }
 
 })

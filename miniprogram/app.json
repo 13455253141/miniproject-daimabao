@@ -5,6 +5,9 @@
     "pages/details/details",
     "pages/search/search",
     "pages/category/category",
+    "pages/customerservice/customerservice",
+    "pages/favorite/favorite",
+    "pages/advise/advise",
     "pages/test/test"
   ],
   "window": {
