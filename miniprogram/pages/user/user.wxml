@@ -1,0 +1,50 @@
+
+<view class="head">      
+  <view class="headIcon">
+    <image class="" src="{{userInfo.avatarUrl}}" style="width:70px;height:70px;"/>
+  </view>
+  <view class="login">
+    <view class="">{{userInfo.nickName}}</view>
+  </view>
+</view>
+ 
+<view class="hr"></view>
+<view class='item'>
+  <view class="title">
+    <text>让大学生没有难做的毕业设计</text>
+  </view>
+  
+</view>
+<!-- <view class="line"></view> -->
+ <view class="hr"></view>
+ <view class="item" bindtap="goToFavorite">
+  <view class="title">我的收藏</view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="line"></view>
+<view class='item' bindtap="goToCustomerService">
+  <view class="title">联系客服</view>
+  <view class="detail2">
+    <text>></text>
+  </view>
+</view>
+<view class="line"></view>
+<view class="item" bindtap="goToAdvise">
+  <view class="title">意见反馈</view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+
+ 
+<view class="hr"></view>
+
+<!-- <view class="item">
+  <view class="title">设置</view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="hr"></view> -->
