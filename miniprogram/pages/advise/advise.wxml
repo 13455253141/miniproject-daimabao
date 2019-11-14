@@ -4,5 +4,14 @@
     <text class="hint">{{texts}}</text>
   </textarea>
   <view class="hr"></view>
-  <button type="primary" bindtap="primary"> 提交 </button>
+  <view class="page-section">
+    <view class="weui-cells__title">联系方式</view>
+    <view class="hr"></view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" auto-focus placeholder="手机号/邮箱/QQ" bindinput="bindKeyInput"/>
+      </view>
+    </view>
+  </view>
+  <button type="primary" bindtap="commitAdvice"> 提交 </button>
 </view>

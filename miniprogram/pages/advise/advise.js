@@ -1,4 +1,5 @@
 // pages/advise/advise.js
+const db = wx.cloud.database();
 Page({
 
   /**
@@ -8,6 +9,8 @@ Page({
     texts: "",
     min: 5,//最少字数
     max: 300, //最多字数 (根据自己需求改变)
+    textContext: "",//意见的内容
+    inputValue: "",//联系方式
   },
 
   /**
@@ -37,10 +40,34 @@ Page({
     if (len > this.data.max) return;
     // 当输入框内容的长度大于最大长度限制（max)时，终止setData()的执行
     this.setData({
-      currentWordNumber: len //当前字数
+      currentWordNumber: len, //当前字数
+      textContext: value,//给意见的内容赋值
     });
   },
-
+  /**
+   * 联系方式数据绑定
+   */
+  bindKeyInput: function (e) {
+    this.setData({
+      inputValue: e.detail.value
+    })
+  },
+  /**
+   * 提交建议
+   */
+  commitAdvice: function () {
+    console.log(this.data.inputValue);
+    db.collection('advice').add({
+      data: {
+        context: this.data.textContext,
+        contact: this.data.inputValue,
+      }
+    }).then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.error(err);
+    });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
