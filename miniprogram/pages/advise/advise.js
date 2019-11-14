@@ -56,16 +56,40 @@ Page({
    * 提交建议
    */
   commitAdvice: function () {
-    console.log(this.data.inputValue);
+    if (this.data.textContext == '') {
+      wx.showToast({
+        title: '请填写意见反馈',
+        icon: 'none',
+        duration: 1000
+      })
+      return;
+    }
+    if (this.data.inputValue == '') {
+      wx.showToast({
+        title: '请填写联系方式',
+        icon: 'none',
+        duration: 1000
+      })
+      return;
+    }
+
     db.collection('advice').add({
       data: {
         context: this.data.textContext,
         contact: this.data.inputValue,
       }
     }).then(res => {
-      console.log(res);
+      wx.showToast({
+        title: '意见反馈成功',
+        icon: 'success',
+        duration: 1000
+      })
     }).catch(err => {
-      console.error(err);
+      wx.showToast({
+        title: '意见反馈失败',
+        icon: 'none',
+        duration: 1000
+      })
     });
   },
 
